@@ -1,0 +1,12 @@
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    height: auto;
+    width: auto;
+}

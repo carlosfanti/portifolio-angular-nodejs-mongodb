@@ -1,0 +1,15 @@
+<div class="row justify-content-center">
+  <div class="col-11 mt-2 mb-4">
+    <div class="row mb-4">
+      <i class="fas fa-graduation-cap fa-2x my-auto mx-3" style="color: #007bff;"></i><h3>Education</h3>
+    </div>
+    <div class="my-2" *ngFor="let education of educations">
+      <h4>{{ education.title }}</h4>
+      <h5>{{ education.local }}</h5>
+      <h6>{{ education.dates.start | date :  "MM.y" }} - {{ education.dates.end | date :  "MM.y" }}</h6>
+      <!-- <h6>{{ education.dates.start + '-' + education.dates.end }}</h6> -->
+      <p style="white-space: pre-wrap;">{{ education.content }}</p>
+      <hr>
+    </div>
+  </div>
+</div>

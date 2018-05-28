@@ -1,0 +1,74 @@
+<ng-container *ngIf="loadedPages; then loadedPagesTemplate; else notLoadedPagesTemplate"></ng-container>
+
+<ng-template #loadedPagesTemplate>
+
+
+  <ng-container *ngIf="locatedPages; then locatedPagesTemplate; else notLocatedPagesTemplate">  </ng-container>
+  
+  <ng-template #locatedPagesTemplate>
+    <div class="container-fluid animated slideInLeft">
+
+      <!-- <button (click)="submitMyPost()">Submite</button> -->
+
+        <div class="row justify-content-center px-1">
+          <div class="col-12 col-md-6 col-xl-4 mt-3" 
+          *ngFor="let page of pages">
+            <div class="pages-cards mx-1 bg-white rounded">
+              <a routerLink="{{page._id}}" class="my-auto">
+                <div id="pageCardsImagen" class="row justify-content-center">
+                  <img class="px-0 py-2" src="{{page.img}}" alt="{{page[language].name}}">
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-12 my-auto text-center">
+                    <h5 class="py-3">{{ page[language].title }}</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center my-3">
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li [class]="pagination.previousClass"><a class="page-link" (click)="onChangePagePrev()">Previous</a></li>
+              <li [class]="pagination.p1Class"><a class="page-link" (click)="onChangePage(pagination.p1)">{{ pagination.p1 }}</a></li>
+              <li [class]="pagination.p2Class"><a class="page-link" (click)="onChangePage(pagination.p2)">{{ pagination.p2 }}</a></li>
+              <li [class]="pagination.p3Class"><a class="page-link" (click)="onChangePage(pagination.p3)">{{ pagination.p3 }}</a></li>
+              <li [class]="pagination.nextClass"><a class="page-link" (click)="onChangePageNext()">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+  </ng-template>
+  <ng-template #notLocatedPagesTemplate>
+    <div class="content-fluid mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex align-items-center justify-content-center" style="height: 95vh">
+            <h1>{{ msgNoPost[language] }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </ng-template>
+
+
+  
+</ng-template>
+
+<ng-template #notLoadedPagesTemplate>
+  <div class="content-fluid mt-2">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-center fa-5x" style="height: 95vh">
+          <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+

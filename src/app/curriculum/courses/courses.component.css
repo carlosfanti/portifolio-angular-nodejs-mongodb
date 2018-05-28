@@ -1,0 +1,39 @@
+@media only screen and (max-width: 768px) {
+    h1 { font-size: 6.0vmin; }
+    h2 { font-size: 5.0vmin; }
+    h3 { font-size: 4.5vmin; }
+    h4 { font-size: 4.25vmin; }
+    h5 { font-size: 4.0vmin;}
+    h6 { font-size: 3.5vmin; }
+    p { font-size: 3.2vmin; }
+    .nav-link { font-size: 3.0vmin; }
+}
+
+h1,h2,h3,h4,h5,p {
+    color: #2d2d2d;
+}
+
+h3 {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+h5, h6 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+p {
+    text-align : justify;
+    margin-bottom: 0;
+}
+
+.courses-dates {
+    font-style: oblique;
+    font-size: 1.5vw;
+}
+
+.courses-local {
+    font-weight: bold;
+    font-style: oblique;
+}

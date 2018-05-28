@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+  <div class="col-11 mt-2 mb-4">
+    <div class="row mb-4">
+      <i class="fas fa-briefcase fa-2x my-auto mx-3" style="color: #007bff;"></i><h3>Experience</h3>
+    </div>
+    <div class="my-2" *ngFor="let experience of experiences">
+      <h4>{{ experience.title }}</h4>
+      <h5>{{ experience.local }}</h5>
+      <h6>{{ experience.dates.start | date :  "MM.y" }} - {{ experience.dates.end | date :  "MM.y" }}</h6>
+      <!-- <h6>{{ experience.dates.start + '-' + experience.dates.end }}</h6> -->
+      <!-- <p>{{ experience.content }}</p> -->
+      <p style="white-space: pre-wrap;">{{ experience.content }}</p>
+      <hr>
+    </div>
+  </div>
+</div>

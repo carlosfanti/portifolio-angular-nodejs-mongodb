@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+  <div class="col-11 mt-2 mb-4">
+    <div class="row mb-4">
+      <i class="fas fa-code fa-2x my-auto mx-3" style="color: #007bff;"></i><h4>Skills</h4>
+    </div>
+    <div class="row justify-content-center">
+      <div class="mx-2 my-1">
+        <nav class="nav nav-tabs" id="navSkill-tab" role="tablist">
+          <div *ngFor="let class of skills.classes; let i=index">
+            <a *ngIf="i==0" class="navSkill-item nav-item nav-link active" (click)="onClickSkill(class)" href="{{ '/#navSkill-'+class }}" data-toggle="tab" role="tab">{{ class }}</a>
+            <a *ngIf="i!=0" class="navSkill-item nav-item nav-link" (click)="onClickSkill(class)" href="{{ '/#navSkill-'+class }}" data-toggle="tab" role="tab">{{ class }}</a>
+          </div>
+        </nav>
+      </div>
+    </div>  
+
+    <ng-container *ngFor="let class of skills.classes; let i=index">
+      <div class="row">
+        <ng-container *ngFor="let skill of skills.skills">
+          <ng-container *ngIf="i==0; then skillThenTemplate; else skillElseTemplate"></ng-container>
+          <ng-template #skillThenTemplate>
+            <ng-container *ngIf="skill.class.includes(class); then then0Template"></ng-container>
+            <ng-template #then0Template>
+              <div class="{{'skills_'+class }} skillsItens col-12 col-md-6 my-2">
+                <p class="my-0">{{ skill.title }} </p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style.width ="{{ skill.nivel + '%' }}" 
+                    attr.aria-valuenow="{{ skill.nivel }}" aria-valuemin="0" aria-valuemax="100">
+                      <b>{{ skill.nivel + '%' }}</b>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ng-template>
+          <ng-template #skillElseTemplate>
+            <ng-container *ngIf="skill.class.includes(class); then thenNTemplate"></ng-container>
+            <ng-template #thenNTemplate>
+              <div class="{{'skills_'+class }} skillsItens d-none col-12 col-md-6 my-2">
+                <p class="my-0">{{ skill.title }} </p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style.width ="{{ skill.nivel + '%' }}" 
+                    attr.aria-valuenow="{{ skill.nivel }}" aria-valuemin="0" aria-valuemax="100">
+                      <b>{{ skill.nivel + '%' }}</b>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ng-template>
+        </ng-container>
+      </div>
+    </ng-container>
+
+
+
+
+
+
+    <!-- <div class="row">
+      <div class="col-12 col-md-6 my-2" *ngFor="let skill of skills.skills">
+        <p class="my-0">{{ skill.title }} </p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style.width ="{{ skill.nivel + '%' }}" 
+            attr.aria-valuenow="{{ skill.nivel }}" aria-valuemin="0" aria-valuemax="100">
+              <b>{{ skill.nivel + '%' }}</b>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>

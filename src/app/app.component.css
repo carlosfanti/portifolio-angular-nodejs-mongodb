@@ -1,0 +1,76 @@
+@media (max-width: 768px) {
+    .wrapper {
+        display: block;
+    }
+
+    #pageSidebar.active {
+        width: 250px;
+        margin-left: 0px;
+    }
+
+    .overlay {
+        /* full screen */
+        width: 100vw;
+        height: 100vh;
+        /* transparent black */
+        background: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block;
+        /* middle layer, i.e. appears below the sidebar */
+        z-index: 9998;
+    }
+    
+}
+
+@media (min-width: 769px) {
+    .wrapper {
+        display: flex;
+    }
+
+    #pageSidebar.active {
+        width: 250px;
+        margin-left: 0px;
+    }
+
+    #pageContent.active {
+        width: calc(100% - 250px);
+        margin-left: 250px;
+    }
+    
+}
+
+#pageSidebar {
+    width: 50px;
+    margin-left: 0px;
+}
+
+#pageContent {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+    
+}
+
+#pageSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 9999;
+    transition: all 0.3s;
+}
+
+#pageContent {
+    animation-name: slideInLeft;
+    transition: all 0.3s;
+}
+
+.langImg {
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+.langImg.active{
+    filter: none;
+}

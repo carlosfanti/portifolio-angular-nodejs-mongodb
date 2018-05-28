@@ -1,0 +1,59 @@
+<div class="row justify-content-center">  
+  <div class="col-11 mt-2 mb-4">
+    <div class="row mb-4">
+      <i class="fas fa-briefcase fa-2x my-auto mx-3" style="color: #007bff;"></i><h3>Courses online</h3>
+    </div>  
+    <div class="row justify-content-center">
+      <nav class="mx-2 my-1">
+        <div class="nav nav-tabs" id="navCourse-tab" role="tablist">
+          <div *ngFor="let keyword of keywords; let i=index">
+            <a *ngIf="i==0" class="navCourse-item nav-item nav-link active" (click)="onClickCourse(keyword)" href="{{ '/#nav-'+keyword }}" data-toggle="tab" role="tab">{{ keyword }}</a>
+            <a *ngIf="i!=0" class="navCourse-item nav-item nav-link" (click)="onClickCourse(keyword)" href="{{ '/#nav-'+keyword }}" data-toggle="tab" role="tab">{{ keyword }}</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <ng-container *ngFor="let keyword of keywords; let i=index">
+      <div class="row">
+        <ng-container *ngFor="let course of courses">
+          <ng-container *ngIf="i==0; then courseThenTemplate; else courseElseTemplate"></ng-container>
+          <ng-template #courseThenTemplate>
+            <ng-container *ngIf="course.keywords.includes(keyword); then then0Template"></ng-container>
+            <ng-template #then0Template>
+              <div class="{{'courses_'+keyword }} coursesItens col-12 col-md-6">
+                <div class="my-2" >
+                  <a href="{{ course.url }} ">
+                    <h5>{{ course.title }}</h5>
+                  </a>
+                  <p class="course-local">{{ course.local }}</p>
+                  <!-- <p class="course-dates">{{ course.dates.start + ' - ' + course.dates.end }}</p> -->
+                  <p class="course-dates">{{ course.dates.start | date :  "MM.y" }} - {{ course.dates.end | date :  "MM.y" }}</p>
+                  <p class="mt-2">{{ course.content }}</p>
+                  <hr>
+                </div>
+              </div>
+            </ng-template>
+          </ng-template>
+          <ng-template #courseElseTemplate>
+            <ng-container *ngIf="course.keywords.includes(keyword); then thenNTemplate"></ng-container>
+            <ng-template #thenNTemplate>
+              <div class="{{'courses_'+keyword }} coursesItens d-none col-12 col-md-6">
+                <div class="my-2" >
+                  <a href="{{ course.url }} ">
+                    <h5>{{ course.title }}</h5>
+                  </a>
+                  <p class="course-local">{{ course.local }}</p>
+                  <!-- <p class="course-dates">{{ course.dates.start + ' - ' + course.dates.end }}</p> -->
+                  <p class="course-dates">{{ course.dates.start | date :  "MM.y" }} - {{ course.dates.end | date :  "MM.y" }}</p>
+                  <p class="mt-2">{{ course.content }}</p>
+                  <hr>
+                </div>
+              </div>
+            </ng-template>
+          </ng-template>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>

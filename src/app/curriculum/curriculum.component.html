@@ -1,0 +1,51 @@
+<ng-container *ngIf="loaded; then loadedTemplate; else notLoadedTemplate"></ng-container>
+
+<ng-template #loadedTemplate>
+  <div class="content-fluid mt-2 animated slideInLeft"> 
+    <div class="row justify-content-center align-items-center">
+      <div class="col-11 col-md-4">
+        <div class="cvcards bg-white mb-4">
+          <app-cv-languages [languages]="curriculum.languages"></app-cv-languages>
+        </div>
+      </div>
+      <div class="col-11 col-md-7">
+        <div class="cvcards bg-white mb-4">
+          <app-cv-skill [skills]="curriculum.skills"></app-cv-skill>
+        </div>
+      </div>
+      <div class="col-11">
+        <div class="cvcards bg-white mb-4">
+          <app-cv-courses [courses]="curriculum.courses.courses" [keywords]="curriculum.courses.keywords"></app-cv-courses>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-11">
+        <div class="cvcards bg-white mb-4">
+          <app-cv-education [educations]="curriculum.educations"></app-cv-education>
+        </div>
+        <div class="cvcards bg-white mb-4">
+          <app-cv-experience [experiences]="curriculum.experiences"></app-cv-experience>
+        </div>
+      </div>
+    </div>
+  </div> 
+</ng-template>
+
+<ng-template #notLoadedTemplate>
+  <div class="content-fluid mt-2">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-center fa-5x" style="height: 95vh">
+          <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+
+
+

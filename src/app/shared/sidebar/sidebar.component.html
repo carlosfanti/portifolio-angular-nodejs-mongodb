@@ -1,0 +1,115 @@
+<ng-container *ngIf="loaded; then loadedTemplate; else notLoadedTemplate"></ng-container>
+<ng-template #loadedTemplate>
+  <div id="sidebarProfile" class="row justify-content-center active">
+    <div class="col-12">
+      <div class="float-right mr-1">
+        <button type="button" id="pageSidebarCollapse" class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+      </div>
+    </div>
+    <div class="col-11 text-center pt-5 pb-1">
+      <img src="./assets/images/profile-1.png" alt="Carlos Eduardo Fanti" 
+        class="rounded">
+      <hr>
+      <p class="mb-0"><strong>Carlos Eduardo Fanti</strong></p>
+      <p><em>{{ subtitle[language] }}</em></p>
+    </div>
+  </div>
+  <div id="sidebarList" class="row active">
+    <div class="col-12">
+      <nav class="nav flex-column">
+        <a class="nav-link active" [routerLink]="[ '/curriculum', language]">
+          <i class="fas fa-user-circle fa-fw pr-1"></i><span>{{ curriculum[language] }}</span>
+        </a>
+        <a class="nav-link" [routerLink]="[ '/portfolio', language]">
+          <i class="fas fa-code fa-fw pr-1"></i><span>{{ portfolio[language] }}</span>
+        </a>
+        <a class="nav-link" [routerLink]="[ '/contact', language]">
+          <i class="fas fa-address-card fa-fw pr-1"></i><span>{{ contact[language] }}</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+  <div id="sidebarFooter" class="active" style="position: fixed; bottom: 0px; width: 250px;">
+    <div class="d-flex justify-content-center">
+      <a class="nav-link" href="https://www.facebook.com/carlosfanti">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a class="nav-link" href="https://github.com/carlosfanti">
+        <i class="fab fa-github fa-lg"></i>
+      </a>
+      <a class="nav-link" href="https://www.linkedin.com/in/carlos-eduardo-fanti/">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+      <a class="nav-link" href="skype:carlosfanti?userinfo">
+        <i class="fab fa-skype fa-lg"></i>
+      </a>
+    </div>
+    <!-- <span>- testando footer -</span> -->
+  </div>
+</ng-template>
+<ng-template #notLoadedTemplate>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12">
+      <div class="d-flex align-items-center justify-content-center fa-5x" style="height: 95vh">
+        <i class="fas fa-circle-notch fa-spin"></i>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+<!-- <div id="sidebarProfile" class="row justify-content-center active">
+  <div class="col-12">
+    <div class="float-right mr-1">
+      <button type="button" id="pageSidebarCollapse" class="btn">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+    </div>
+  </div>
+  <div class="col-11 text-center pt-5 pb-1">
+    <img src="./assets/images/profile-1.png" alt="Carlos Eduardo Fanti" 
+      class="rounded">
+    <hr>
+    <p class="mb-0"><strong>Carlos Eduardo Fanti</strong></p>
+    <p><em>{{ subtitle[language] }}</em></p>
+  </div>
+</div>
+<div id="sidebarList" class="row active">
+  <div class="col-12">
+    <nav class="nav flex-column">
+      <a class="nav-link active" [routerLink]="[ '/curriculum', language]">
+        <i class="fas fa-user-circle fa-fw pr-1"></i><span>{{ curriculum[language] }}</span>
+      </a>
+      <a class="nav-link" [routerLink]="[ '/portfolio', language]">
+        <i class="fas fa-code fa-fw pr-1"></i><span>{{ portfolio[language] }}</span>
+      </a>
+      <a class="nav-link" [routerLink]="[ '/contact']">
+        <i class="fas fa-address-card fa-fw pr-1"></i><span>{{ contact[language] }}</span>
+      </a>
+    </nav>
+  </div>
+</div>
+<div id="sidebarFooter" class="active" style="position: fixed; bottom: 0px; width: 250px;">
+  <div class="d-flex justify-content-center">
+    <a class="nav-link" href="https://www.facebook.com">
+      <i class="fab fa-facebook fa-lg"></i>
+    </a>
+    <a class="nav-link" href="https://www.github.com">
+      <i class="fab fa-github fa-lg"></i>
+    </a>
+    <a class="nav-link" href="https://www.linkedin.com">
+      <i class="fab fa-linkedin fa-lg"></i>
+    </a>
+    <a class="nav-link" href="https://www.skype.com">
+      <i class="fab fa-skype fa-lg"></i>
+    </a>
+  </div>
+  
+</div> -->

@@ -1,0 +1,28 @@
+<!-- <div class="wrapper bg-black"> -->
+<div class="wrapper content-fluid">
+  <div id="pageSidebar" class="bg-white active ">
+    <div id="langImages" class="row justify-content-center mx-0 my-0">
+      <a class="langImg mx-1" (click)="onSelectLanguage('en')">
+        <img src="./assets/images/langIngles.svg" class="rounded" width="30" height="20" alt="Ingles" >
+      </a>
+      <a class="langImg active mx-1" (click)="onSelectLanguage('es')">
+        <img src="./assets/images/langEspanol.svg" class="rounded" width="30" height="20" alt="Espanol">
+      </a>
+      <a class="langImg mx-1" (click)="onSelectLanguage('pt')">
+        <img src="./assets/images/langPortugues.svg" class="rounded" width="30" height="20" alt="Portugues">
+      </a>
+    </div>
+    <div class="row justify-content-center mx-0 my-0">
+      <app-sidebar [language]="language"></app-sidebar>
+    </div>
+  </div>
+
+  <div id="pageContent" class="active">
+    <div class="col-12 routerOutlet">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+</div>
+

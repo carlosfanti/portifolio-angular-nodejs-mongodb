@@ -1,0 +1,56 @@
+<ng-container *ngIf="loaded; then loadedTemplate; else notLoadedTemplate"></ng-container>
+
+<ng-template #loadedTemplate>
+  
+  <ng-container *ngIf="found; then foundTemplate; else notFoundTemplate"></ng-container>
+  
+  <ng-template #foundTemplate>
+      <div class="content-fluid mt-2 animated slideInDown">
+        <div class="row justify-content-center">
+          <div class="col-11 bg-white" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);">
+            <div class="row justify-content-center my-3">
+              <div class="col-10 col-md-8 text-center">
+                <img src="{{page.img}}" alt="{{page[language].name}}">
+                <h2 class="mt-4">{{ page[language].title }}</h2>
+                <hr>
+              </div>
+            </div>
+            <div class="row justify-content-center my-2">
+              <div class="col-10">
+                <div class="text-center">
+                  <p style="white-space: pre-wrap;">{{ page[language].content }}</p>
+                </div>
+              </div>
+            </div>
+            
+            
+              
+          </div>
+        </div>
+      </div>
+  </ng-template>
+
+  <ng-template #notFoundTemplate>
+      <div class="content-fluid mt-2 animated slideInDown">
+        <div class="row justify-content-center">
+          <div class="col-11 bg-white" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);">
+            <div class="d-flex align-items-center justify-content-center" style="height: 95vh">
+              <h2>{{ pageText[language] }}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+  </ng-template>
+</ng-template>
+
+<ng-template #notLoadedTemplate>
+  <div class="content-fluid mt-2">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-center fa-5x" style="height: 95vh">
+          <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

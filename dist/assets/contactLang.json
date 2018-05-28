@@ -1,0 +1,41 @@
+{
+    "en": {
+        "labelName": "Name: ",
+        "labelEmail": "Email:  ",
+        "labelContent": "Message: ",
+        "errorName": "Name is required",
+        "errorEmail": "Email is not correct ",
+        "errorContent": "Content can not be blank",
+        "placeholderName": "Enter your name here...",
+        "placeholderEmail": "Your email... ",
+        "placeholderContent": "Your message here...",
+        "buttonSubmit": "Submit",
+        "messageSubmited": "Thank you for contacting me... "
+    },
+    "es": {
+        "labelName": "Nombre: ",
+        "labelEmail": "Email:  ",
+        "labelContent": "Mensaje: ",
+        "errorName": "Nombre es necesario",
+        "errorEmail": "Email no esta correcto",
+        "errorContent": "Contenido no puede estar vacio",
+        "placeholderName": "Introduzca tu nombre aqui...",
+        "placeholderEmail": "Tu email... ",
+        "placeholderContent": "Tu mensaje aqui...",
+        "buttonSubmit": "Enviar",
+        "messageSubmited": "Gracias por contactarme... "
+    },
+    "pt": {
+        "labelName": "Nome: ",
+        "labelEmail": "Email:  ",
+        "labelContent": "Mensagem: ",
+        "errorName": "Nome é necessario",
+        "errorEmail": "Email não esta correto",
+        "errorContent": "Conteudo nao pode estar vazio",
+        "placeholderName": "Introduza seu nome aqui...",
+        "placeholderEmail": "Seu email...",
+        "placeholderContent": "Sua mensagem aqui...",
+        "buttonSubmit": "Enviar",
+        "messageSubmited": "Obrigado por entrar em contato..."
+    }
+}
